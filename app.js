@@ -68,3 +68,5 @@ var onB=!!document.getElementById("books");
 $("hs").onsubmit=function(e){e.preventDefault();var v=$("q0").value.trim();if(onB){q=v.toLowerCase();draw()}else location.href="books.html?q="+encodeURIComponent(v)};
 if(onB){$("q0").oninput=function(){q=this.value.trim().toLowerCase();draw()};var pq=new URLSearchParams(location.search).get("q");if(pq){$("q0").value=pq;q=pq.toLowerCase();draw()}}
 var mb=document.getElementById("menu");if(mb)mb.onclick=function(){var o=document.getElementById("nav").classList.toggle("open");mb.setAttribute("aria-expanded",o)};
+
+var gf=document.getElementById("gifts");if(gf)gf.innerHTML=CFG.GIFTS.slice(0,4).map(function(i){var b=BOOKS[i];return '<article class="book">'+A(b,"open",'<span class="ribbon">🎁 Gift pick</span>'+cover(b))+'<h3>'+esc(b.t)+'</h3><span class="by">'+esc(b.a)+'</span>'+A(b,"buy","Buy on Amazon")+'</article>'}).join("");
